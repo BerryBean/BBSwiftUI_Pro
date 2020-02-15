@@ -48,10 +48,17 @@ struct CategoryHome: View {
                 }
                 .listRowInsets(EdgeInsets())
                 
-                NavigationLink(destination: LandmarkList()) {
+//                NavigationLink(destination: LandmarkList { LandmarkDetail(landmark: $0) }) {
+//                    Text("See All")
+//                }
+                NavigationLink(destination: LandmarkList(detailViewProducer: { (landmark) -> LandmarkDetail in
+
+                    return LandmarkDetail(landmark: landmark)
+                })) {
                     Text("See All")
-                    
                 }
+//
+
             }
             .navigationBarTitle("Featured")
             .navigationBarItems(trailing: profileButton)
