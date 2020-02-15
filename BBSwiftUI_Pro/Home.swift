@@ -80,5 +80,7 @@ struct FeaturedLandmarks: View {
 struct CategoryHome_Previews: PreviewProvider {
     static var previews: some View {
         CategoryHome().environmentObject(UserData())
+        .previewDevice(PreviewDevice(rawValue: "iPhone x"))
+        .previewDisplayName("iPhone x")
     }
 }

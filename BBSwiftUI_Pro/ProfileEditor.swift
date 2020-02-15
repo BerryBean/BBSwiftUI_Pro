@@ -33,8 +33,9 @@ struct ProfileEditor: View {
                 Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
                     ForEach(Profile.Season.allCases, id: \.self) { season in
                         Text(season.rawValue).tag(season)
+                        
+
                     }
-                    
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
@@ -56,5 +57,6 @@ struct ProfileEditor: View {
 struct ProfileEditor_Previews: PreviewProvider {
     static var previews: some View {
         ProfileEditor(profile: .constant(.default))
+        
     }
 }

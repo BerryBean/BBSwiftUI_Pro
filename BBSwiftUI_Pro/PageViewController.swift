@@ -17,7 +17,6 @@ struct PageViewController: UIViewControllerRepresentable {
         Coordinator(self)
     }
     
-    
     func makeUIViewController(context: Context) -> UIPageViewController {
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll, navigationOrientation: .horizontal)
@@ -60,8 +59,10 @@ struct PageViewController: UIViewControllerRepresentable {
         }
         
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-            if completed, let visibleViewController = pageViewController.viewControllers?.first,
-                let index = parent.controllers.firstIndex(of: visibleViewController) {
+            if completed,
+                let visibleViewController = pageViewController.viewControllers?.first,
+                let index = parent.controllers.firstIndex(of: visibleViewController)
+            {
                 parent.currentPage = index
             }
             
