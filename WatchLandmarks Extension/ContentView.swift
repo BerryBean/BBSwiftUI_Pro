@@ -10,13 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("He事实上llo, Wodjjld!")
+        LandmarkList { WatchLandmarkDetail(landmark: $0) }
+        .environmentObject(UserData())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LandmarkList { WatchLandmarkDetail(landmark: $0) }
+        .environmentObject(UserData())
     }
 }
 
